@@ -1,7 +1,28 @@
 {
-  "name": "feedreader",
-  "version": "1.0.0",
-  "main": "",
-  "author": "Yannick Fricke <yannickfricke@googlemail.com>",
-  "license": "MIT"
+	"name": "feedreader",
+	"version": "1.0.0",
+	"main": "",
+	"author": "Yannick Fricke <yannickfricke@googlemail.com>",
+	"license": "MIT",
+	"scripts": {
+		"commit": "git-cz",
+		"release": "semantic-release pre"
+	},
+	"dependencies": {
+		"electron": "^3.0.10"
+	},
+	"devDependencies": {
+		"commitizen": "^3.0.4",
+		"cz-conventional-changelog": "^2.1.0",
+		"gulp": "^3.9.1",
+		"node-sass": "^4.10.0",
+		"semantic-release": "^15.12.0",
+		"typescript": "^3.1.6",
+		"webpack": "^4.26.0"
+	},
+	"config": {
+		"commitizen": {
+			"path": "node_modules/cz-conventional-changelog"
+		}
+	}
 }
