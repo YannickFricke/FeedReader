@@ -15,8 +15,10 @@
 		"commitizen": "^3.0.4",
 		"cz-conventional-changelog": "^2.1.0",
 		"gulp": "^3.9.1",
+		"jest": "^23.6.0",
 		"node-sass": "^4.10.0",
 		"semantic-release": "^15.12.0",
+		"ts-jest": "^23.10.4",
 		"typescript": "^3.1.6",
 		"webpack": "^4.26.0"
 	},
