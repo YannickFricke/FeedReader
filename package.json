@@ -6,7 +6,7 @@
 	"license": "MIT",
 	"scripts": {
 		"commit": "git-cz",
-		"release": "semantic-release pre"
+		"release": "semantic-release"
 	},
 	"dependencies": {
 		"electron": "^3.0.10"
