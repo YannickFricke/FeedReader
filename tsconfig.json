@@ -13,5 +13,10 @@
         "skipLibCheck": true,
         "allowJs": true,
         "jsx": "react"
-    }
+    },
+    "exclude": [
+        "./dist",
+        "./jest.config.js",
+        "./webpack.config.js"
+    ]
 }
