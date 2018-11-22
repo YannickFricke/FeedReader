@@ -32,7 +32,7 @@ module.exports = [
         entry: {
             main: './src/main.ts'
         },
-        mode: 'none'
+        mode: 'production'
     }, commonConfig),
     Object.assign({
         target: 'electron-renderer',
@@ -42,6 +42,6 @@ module.exports = [
         plugins: [new htmlWebpackPlugin({
             template: 'src/index.html'
         })],
-        mode: 'none'
+        mode: 'production'
     }, commonConfig)
 ];
