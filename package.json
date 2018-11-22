@@ -5,9 +5,10 @@
 	"author": "Yannick Fricke <yannickfricke@googlemail.com>",
 	"license": "MIT",
 	"scripts": {
-		"build": "webpack --config webpack.config.js",
+		"build:dev": "webpack --config webpack.dev.config.js",
+		"build:prod": "webpack --config webpack.prod.config.js",
 		"commit": "git-cz",
-		"prestart": "yarn run build",
+		"prestart": "yarn run build:dev",
 		"release": "semantic-release",
 		"start": "electron ./dist/main.js",
 		"test": "jest",
