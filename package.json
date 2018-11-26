@@ -65,7 +65,8 @@
 	"build": {
 		"appId": "com.github.yannickfricke.feedreader",
 		"mac": {
-			"category": "public.app-category.education"
+			"category": "public.app-category.education",
+			"icon": "src/icons/mac/icon.icns"
 		},
 		"files": [
 			"out"
@@ -82,17 +83,20 @@
 					"type": "link",
 					"path": "/Applications"
 				}
-			]
+			],
+			"icon": "src/icons/mac/icon.icns"
 		},
 		"linux": {
 			"target": [
 				"AppImage",
 				"deb"
 			],
-			"category": "Education"
+			"category": "Education",
+			"icon": "src/icons/png/"
 		},
 		"win": {
-			"target": "nsis"
+			"target": "nsis",
+			"icon": "src/icons/png/256x256.png"
 		}
 	},
 	"config": {
