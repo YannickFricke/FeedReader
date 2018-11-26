@@ -3,10 +3,10 @@ import * as ReactDom from 'react-dom';
 import {App} from './ts/App';
 
 // Load the styles
-import './vendor/semantic-ui/semantic.css';
 import './sass/app.scss';
+import './vendor/semantic-ui/semantic.css';
 
 ReactDom.render(
-    <App />,
-    document.getElementById('app')
+	<App />,
+	document.getElementById('app'),
 );
