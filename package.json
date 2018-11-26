@@ -4,6 +4,11 @@
 	"description": "A simple and nice UI for reading RSS and ATOM feeds on Windows, Linux and Mac OS",
 	"main": "./out/main.js",
 	"author": "Yannick Fricke <yannickfricke@googlemail.com>",
+	"homepage": "https://github.com/YannickFricke/FeedReader",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/YannickFricke/FeedReader.git"
+	},
 	"license": "MIT",
 	"productName": "FeedReader",
 	"scripts": {
