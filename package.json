@@ -14,7 +14,7 @@
 		"prestart": "webpack --config webpack.dev.config.js",
 		"postinstall": "electron-builder install-app-deps",
 		"release": "semantic-release",
-		"start": "electron ./dist/main.js",
+		"start": "electron ./out/main.js",
 		"test": "jest",
 		"test:watch": "jest --watch"
 	},
