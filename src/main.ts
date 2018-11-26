@@ -1,12 +1,17 @@
 import {app, BrowserWindow} from 'electron';
+import {join} from 'path';
 
 declare var __dirname: string;
 
 let mainWindow: BrowserWindow;
 
 function onReady() {
+
+	let iconPath = join(__dirname, '..', 'src', 'icons', 'png', '64x64.png');
+
 	mainWindow = new BrowserWindow({
 		height: 600,
+		icon: iconPath,
 		title: 'FeedReader',
 		width: 800,
 	});

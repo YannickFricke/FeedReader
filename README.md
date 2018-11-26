@@ -28,3 +28,6 @@ Please make sure to update tests as appropriate.
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
+
+## Credits
+* Icon made by [Agata Kuczminska](https://www.flaticon.com/authors/agata-kuczminska) from [https://www.flaticon.com/](www.flaticon.com) which is licensed under [CC 3.0 BY](http://creativecommons.org/licenses/by/3.0/)
