@@ -7,7 +7,7 @@ let mainWindow: BrowserWindow;
 
 function onReady() {
 
-	let iconPath = join(__dirname, '..', 'src', 'icons', 'png', '64x64.png');
+	const iconPath = join(__dirname, '..', 'src', 'icons', 'png', '64x64.png');
 
 	mainWindow = new BrowserWindow({
 		height: 600,
