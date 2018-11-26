@@ -23,12 +23,6 @@ const commonConfig = {
     },
     node: {
         __dirname: false
-    },
-    devServer: {
-        contentBase: path.join(__dirname, 'dist'),
-        hot: true,
-        port: 8080,
-        stats: 'normal'
     }
 };
 
@@ -48,6 +42,13 @@ module.exports = [
         plugins: [new htmlWebpackPlugin({
             template: 'src/index.html'
         })],
-        mode: 'development'
+        mode: 'development',
+        devServer: {
+            contentBase: path.join(__dirname, 'dist'),
+            hot: true,
+            inline: true,
+            port: 8080,
+            stats: 'normal'
+        }
     }, commonConfig)
 ];

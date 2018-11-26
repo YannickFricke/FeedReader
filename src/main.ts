@@ -11,8 +11,15 @@ function onReady() {
         title: 'FeedReader'
     });
 
-    const fileName = `file://${__dirname}/index.html`;
-    mainWindow.loadURL(fileName);
+    let urlToLoad = '';
+
+    if (process.env.NODE_ENV === 'development') {
+        urlToLoad = 'http://localhost:8080';
+    } else {
+        urlToLoad = `file://${__dirname}/index.html`;
+    }
+
+    mainWindow.loadURL(urlToLoad);
     mainWindow.on('close', function() {
         app.quit();
     })
