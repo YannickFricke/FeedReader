@@ -1,13 +1,19 @@
 {
 	"name": "feedreader",
 	"version": "1.0.0",
+	"description": "A simple and nice UI for reading RSS and ATOM feeds on Windows, Linux and Mac OS",
 	"main": "",
 	"author": "Yannick Fricke <yannickfricke@googlemail.com>",
 	"license": "MIT",
+	"productName": "FeedReader",
 	"scripts": {
 		"build:dev": "webpack-dev-server --config webpack.dev.config.js",
 		"build:prod": "webpack --config webpack.prod.config.js",
 		"commit": "git-cz",
+		"package:all": "concurrently \"npm:package:linux\" \"npm:package:mac\" \"npm:package:win\"",
+		"package:linux": "electron-packager . --overwrite --platform=linux --arch=x64 --prune=true --out=release-builds",
+		"package:mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --prune=true --out=release-builds",
+		"package:win": "electron-packager . --overwrite --platform=win32 --arch=ia32 --prune=true --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"FeedReader\"",
 		"prestart": "webpack --config webpack.dev.config.js",
 		"release": "semantic-release",
 		"start": "electron ./dist/main.js",
@@ -15,7 +21,8 @@
 		"test:watch": "jest --watch"
 	},
 	"dependencies": {
-		"electron": "^3.0.10"
+		"electron": "^3.0.10",
+		"electron-packager": "^12.2.0"
 	},
 	"devDependencies": {
 		"@types/jest": "^23.3.9",
@@ -26,8 +33,10 @@
 		"@types/redux": "^3.6.0",
 		"awesome-typescript-loader": "^5.2.1",
 		"commitizen": "^3.0.4",
+		"concurrently": "^4.1.0",
 		"css-loader": "^1.0.1",
 		"cz-conventional-changelog": "^2.1.0",
+		"electron-installer-debian": "^1.0.0",
 		"file-loader": "^2.0.0",
 		"gulp": "^3.9.1",
 		"html-loader": "^0.5.5",
