@@ -1,10 +1,10 @@
 {
     "categories": [
-      "Education",
-      "Network"
+        "Education",
+        "Network"
     ],
     "dest": "release-builds/",
     "lintianOverrides": [
-      "changelog-file-missing-in-native-package"
+        "changelog-file-missing-in-native-package"
     ]
-  }
+}
