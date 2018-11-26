@@ -1,28 +1,27 @@
 matrix:
   include:
-    - os: osx
-      osx_image: xcode9.4
-      language: node_js
-      node_js: "10"
-      env:
-        - ELECTRON_CACHE=$HOME/.cache/electron
-        - ELECTRON_BUILDER_CACHE=$HOME/.cache/electron-builder
-
-    - os: linux
-      services: docker
-      language: generic
-
+  - os: osx
+    osx_image: xcode9.4
+    language: node_js
+    node_js: '10'
+    env:
+    - ELECTRON_CACHE=$HOME/.cache/electron
+    - ELECTRON_BUILDER_CACHE=$HOME/.cache/electron-builder
+  - os: linux
+    services: docker
+    language: generic
 cache:
   directories:
-    - node_modules
-    - $HOME/.cache/electron
-    - $HOME/.cache/electron-builder
-
+  - node_modules
+  - "$HOME/.cache/electron"
+  - "$HOME/.cache/electron-builder"
 script:
-  - ci/travis.sh
+- ci/travis.sh
 before_cache:
-  - rm -rf $HOME/.cache/electron-builder/wine
-
+- rm -rf $HOME/.cache/electron-builder/wine
 branches:
   except:
-    - "/^v\\d+\\.\\d+\\.\\d+$/"
+  - "/^v\\d+\\.\\d+\\.\\d+$/"
+env:
+  global:
+    secure: M4grpxrfHPtMaBA9D5tJVHtMTkg2sZTCP+QUa3syMc5r6H/6Obi7OU34lsR4AjrQ+NK1DDZ7pqZT6IpdGVAfaIJ4mnnWm4zBmwLuXI5P31Eem9uiRrJyv9SfAPqR/2CcEdGWBDdnbtA742pFrPEyDD+ygLdKRjefyOy/39J0LHxEyOi9RT5pRY/oQkNwJhxz5XfI/rMOQ0HPxrO0cfkyIo+QEf56TERNcdfjn+Fjfuf0Fy69G0ifS2Mms2pxARGB0qPt+ufPGawuw4GtgSN/tBXqTDuZecdk3jKRqZ3wBRn4G5kkGSyguH0Fo6MYq3DwBY8wRQUKq7w0i2rwNB/CLYf4W/M19BnnAWfT65kyUvVKkt92SADCJmqFtnHGIGwelnsNVdEhQECLbSkUaZeJtN906feyrchCFI+wp0ji6Y4JruW9ry0jzmS5t7slrnEJAfA00pLDREGEbRW/7WezwjaBZ6D9U1JDm/O1ZPZaYvmE1tq5uPM+tkmQF5f7PvHfFGhqwNi0jr4Ep6BS3hYSJCu9shsqxhUfpfFQGsB3cEnyzdWZgziTS7gxj7y4cefrVIs8EhG9GsVa60maSZPDAyqcx9xcNJN+drVrbyLzYGsF2NqRhzSPPhSjN9IMgNQjVLmPeYyMdzoxRHLgcYKv0fqeAWsF2Wk6U3xMh9LWhoY=
