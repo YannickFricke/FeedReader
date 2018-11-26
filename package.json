@@ -39,6 +39,7 @@
 		"gulp": "^3.9.1",
 		"html-loader": "^0.5.5",
 		"html-webpack-plugin": "^3.2.0",
+		"husky": "^1.2.0",
 		"jest": "^23.6.0",
 		"mini-css-extract-plugin": "^0.4.5",
 		"node-sass": "^4.10.0",
@@ -94,6 +95,11 @@
 	"config": {
 		"commitizen": {
 			"path": "node_modules/cz-conventional-changelog"
+		}
+	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "npm run test && npm run lint"
 		}
 	}
 }
