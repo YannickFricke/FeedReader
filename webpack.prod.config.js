@@ -4,7 +4,7 @@ const miniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const commonConfig = {
     output: {
-        path: path.resolve(__dirname, 'dist'),
+        path: path.resolve(__dirname, 'out'),
         filename: '[name].js'
     },
     module: {

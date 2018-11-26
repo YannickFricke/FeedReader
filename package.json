@@ -2,7 +2,7 @@
 	"name": "feedreader",
 	"version": "1.0.0",
 	"description": "A simple and nice UI for reading RSS and ATOM feeds on Windows, Linux and Mac OS",
-	"main": "",
+	"main": "./out/main.js",
 	"author": "Yannick Fricke <yannickfricke@googlemail.com>",
 	"license": "MIT",
 	"productName": "FeedReader",
