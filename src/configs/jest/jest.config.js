@@ -12,5 +12,8 @@ module.exports = {
 		'./src/configs/jest/test-setup.ts',
 		'./src/configs/jest/test-shim.js'
 	],
+	testPathIgnorePatterns: [
+		'__mocks__/'
+	],
 	snapshotSerializers: ["enzyme-to-json"]
 };

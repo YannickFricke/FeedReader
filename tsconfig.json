@@ -18,6 +18,8 @@
         "./dist",
         "./out",
         "./src/configs",
-        "./code-cov/"
+        "./code-cov/",
+        "**/__tests__/**/*",
+        "./__mocks__/**/*"
     ]
 }

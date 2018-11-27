@@ -38,7 +38,9 @@
     "rulesDirectory": [],
     "linterOptions": {
         "exclude": [
-            "./code-cov/**/*"
+            "./code-cov/**/*",
+            "./__mocks__/**/*",
+            "./node_modules/**/*"
         ]
     }
 }
