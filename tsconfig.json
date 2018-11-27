@@ -18,5 +18,6 @@
         "./dist",
         "./out",
         "./src/configs",
+        "./code-cov/"
     ]
 }
