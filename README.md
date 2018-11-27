@@ -1,4 +1,4 @@
-# FeedReader [![Build Status](https://travis-ci.org/YannickFricke/FeedReader.svg?branch=develop)](https://travis-ci.org/YannickFricke/FeedReader) [![Join the chat at https://gitter.im/RSS-ATOM-FeedReader/Lobby](https://badges.gitter.im/RSS-ATOM-FeedReader/Lobby.svg)](https://gitter.im/RSS-ATOM-FeedReader/Lobby)
+# FeedReader [![Build Status](https://travis-ci.org/YannickFricke/FeedReader.svg?branch=develop)](https://travis-ci.org/YannickFricke/FeedReader) [![Coverage Status](https://coveralls.io/repos/github/YannickFricke/FeedReader/badge.svg?branch=develop)](https://coveralls.io/github/YannickFricke/FeedReader?branch=develop) [![Join the chat at https://gitter.im/RSS-ATOM-FeedReader/Lobby](https://badges.gitter.im/RSS-ATOM-FeedReader/Lobby.svg)](https://gitter.im/RSS-ATOM-FeedReader/Lobby)
 
 FeedReader is an electron application for reading RSS feeds in a beautiful GUI. It also supports ATOM feeds.
 
