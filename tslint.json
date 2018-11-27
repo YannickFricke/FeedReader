@@ -35,5 +35,10 @@
         "use-isnan": true,
         "variable-name": true
     },
-    "rulesDirectory": []
+    "rulesDirectory": [],
+    "linterOptions": {
+        "exclude": [
+            "./code-cov/**/*"
+        ]
+    }
 }
