@@ -5,7 +5,8 @@ module.exports = {
 	collectCoverageFrom: [
 		'src/ts/**/*.{ts,tsx}',
 		'!**/node_modules/**',
-		'!**/vendor/**'
+		'!**/vendor/**',
+		'!**/*.stories.tsx'
 	],
 	coverageDirectory: './code-cov/',
 	setupFiles: [
@@ -13,7 +14,8 @@ module.exports = {
 		'./src/configs/jest/test-shim.js'
 	],
 	testPathIgnorePatterns: [
-		'__mocks__/'
+		'__mocks__/',
+		'__stories__'
 	],
 	snapshotSerializers: ["enzyme-to-json"]
 };
