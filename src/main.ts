@@ -1,4 +1,5 @@
 import {app, BrowserWindow} from 'electron';
+import installExtension, {REACT_DEVELOPER_TOOLS, REDUX_DEVTOOLS} from 'electron-devtools-installer';
 import {join} from 'path';
 
 declare var __dirname: string;
@@ -20,6 +21,9 @@ function onReady() {
 
 	if (process.env.NODE_ENV === 'development') {
 		urlToLoad = 'http://localhost:8080';
+
+		// Load developer extensions
+		installDeveloperTools();
 	} else {
 		urlToLoad = `file://${__dirname}/index.html`;
 	}
@@ -32,3 +36,15 @@ function onReady() {
 
 app.on('ready', () => onReady());
 app.on('window-all-closed', () => app.quit());
+
+function installDeveloperTools() {
+	[REACT_DEVELOPER_TOOLS, REDUX_DEVTOOLS].forEach((element) => {
+		/* tslint:disable */
+		installExtension(element).then((name) => {
+			console.log(`Added extension: ${name}`);
+		}).catch((err) => {
+			console.log('An error occurred: ', err);
+		});
+		/* tslint:enable */
+	});
+}
