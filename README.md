@@ -11,18 +11,62 @@ FeedReader is an electron application for reading RSS feeds in a beautiful GUI. 
 
 Clone or download this repository.
 
+Install all dependencies
+
+```
+yarn install
+```
+
 Run the "start" script with
 
 ```
-yarn start
+yarn run start
 ```
 
 Then an electron window should appear
+
+## Packaging
+### Package for Windows and Linux
+
+To package this application you need to run the `build:prod` script first with:
+
+```
+yarn run build:prod
+```
+
+Otherwise electron-builder can't find the source script for the packaging process.
+
+Then run
+
+```
+yarn run package
+```
+
+to package the application for Windows and Linux. The Mac OS build is currently excluded from it.
+
+### Package for Mac OS
+When you want to package the application for Mac OS you need Mac OS and XCode for building it.
+
+Then run
+
+```
+yarn run electron-builder build -m
+```
+
+for building for the Mac OS platform.
+
+Currently we build for all three platforms with Travis-CI.
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
 Please make sure to update tests as appropriate.
+
+Run tests with the following command
+
+```
+yarn test
+```
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
