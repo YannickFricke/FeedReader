@@ -21,7 +21,8 @@
         "./src/configs",
         "./code-cov/",
         "**/__tests__/**/*",
-        "./__mocks__/**/*",
-        "storybook-static"
+        "**/__mocks__/**/*",
+        "**/__stories__/**/*",
+        "storybook-static",
     ]
 }
