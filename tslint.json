@@ -29,6 +29,7 @@
         "no-unsafe-finally": true,
         "no-use-before-declare": true,
         "no-var-keyword": true,
+        "object-literal-sort-keys": false,
         "quotemark": [true, "single", "jsx-double"],
         "semicolon": [true, "always"],
         "triple-equals": true,
