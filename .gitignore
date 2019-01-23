@@ -4,3 +4,4 @@ dist/
 out/
 code-cov/
 storybook-static/
+.vscode/
