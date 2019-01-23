@@ -3,19 +3,23 @@ module.exports = {
 	testEnvironment: 'node',
 	collectCoverage: true,
 	collectCoverageFrom: [
-		'src/ts/**/*.{ts,tsx}',
-		'!**/node_modules/**',
-		'!**/vendor/**',
-		'!**/*.stories.tsx'
+		'<rootDir>/src/ts/**/*.{ts,tsx}',
+		'!<rootDir>/**/node_modules/**',
+		'!<rootDir>/**/vendor/**',
+		'!<rootDir>/**/*.stories.tsx'
 	],
-	coverageDirectory: './code-cov/',
+	coverageDirectory: '<rootDir>/code-cov/',
+	rootDir: '../../../',
+	roots: [
+		'<rootDir>/src/ts/'
+	],
 	setupFiles: [
-		'./src/configs/jest/test-setup.ts',
-		'./src/configs/jest/test-shim.js'
+		'<rootDir>/src/configs/jest/test-setup.ts',
+		'<rootDir>/src/configs/jest/test-shim.js'
 	],
+	snapshotSerializers: ["enzyme-to-json"],
 	testPathIgnorePatterns: [
 		'__mocks__/',
 		'__stories__'
-	],
-	snapshotSerializers: ["enzyme-to-json"]
+	]
 };
