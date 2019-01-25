@@ -11,8 +11,10 @@ import {createDefaultStore} from './ts/store/Store';
 import {App} from './ts/App';
 
 // Load the styles
-import './sass/app.scss';
+// tslint:disable:ordered-imports
 import './vendor/semantic-ui/semantic.css';
+import './sass/app.scss';
+// tslint:enable:ordered-imports
 
 ReactDom.render(
 	<Provider store={createDefaultStore()}>
