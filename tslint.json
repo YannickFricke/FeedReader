@@ -10,7 +10,7 @@
         "curly": true,
         "encoding": true,
         "eofline": true,
-        "indent": [true, "tabs", 4],
+        "indent": [true, "spaces", 4],
         "member-access": true,
         "member-ordering": [true, {"order": "fields-first"}],
         "newline-before-return": true,
