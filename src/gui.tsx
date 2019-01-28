@@ -17,8 +17,8 @@ import './sass/app.scss';
 // tslint:enable:ordered-imports
 
 ReactDom.render(
-	<Provider store={createDefaultStore()}>
-		<App/>
-	</Provider>,
-	document.getElementById('app'),
+    <Provider store={createDefaultStore()}>
+        <App/>
+    </Provider>,
+    document.getElementById('app'),
 );

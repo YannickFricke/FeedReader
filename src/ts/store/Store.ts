@@ -8,5 +8,5 @@ declare var window: any;
  * Returns the default store for the application
  */
 export const createDefaultStore = () => {
-	return createStore(AppReducer, initialState, window.devToolsExtension ? window.devToolsExtension() : undefined);
+    return createStore(AppReducer, initialState, window.devToolsExtension ? window.devToolsExtension() : undefined);
 };
