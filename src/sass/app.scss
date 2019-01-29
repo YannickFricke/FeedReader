@@ -1,0 +1,13 @@
+@import '~normalize.css/normalize.css';
+@import './mixins/breakpoints.scss';
+
+#app {
+    background-color: #F0F0F0;
+    width: 100%;
+    height: 100%;
+
+    &.darkmode {
+        background-color: #181d27;
+        color: #F0F0F0;
+    }
+}
