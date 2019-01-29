@@ -9,6 +9,9 @@ module.exports = {
 		'!<rootDir>/**/*.stories.tsx'
 	],
 	coverageDirectory: '<rootDir>/code-cov/',
+	moduleNameMapper: {
+		"electron": "<rootDir>/__mocks__/electron.js"
+	},
 	rootDir: '../../../',
 	roots: [
 		'<rootDir>/src/ts/'
