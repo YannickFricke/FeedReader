@@ -1,6 +1,7 @@
 const path              = require('path');
 const htmlWebpackPlugin = require('html-webpack-plugin');
 const commonConfig      = require('./webpack.common.config');
+const cleanTerminalPlugin = require('clean-terminal-webpack-plugin');
 
 const electronMain = Object.assign({
     target: 'electron-main',
@@ -18,7 +19,8 @@ const electronRenderer = Object.assign({
     plugins: [
         new htmlWebpackPlugin({
             template: path.resolve(__dirname, '..', '..', 'index.html')
-        })
+        }),
+        new cleanTerminalPlugin(),
     ],
     mode     : 'development',
     devServer: {
