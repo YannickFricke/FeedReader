@@ -29,6 +29,7 @@
 		"test:watch": "jest --config src/configs/jest/jest.config.js --watch"
 	},
 	"dependencies": {
+		"classnames": "^2.2.6",
 		"clean-terminal-webpack-plugin": "^2.0.1",
 		"moment": "^2.22.2",
 		"normalize.css": "^8.0.1",
