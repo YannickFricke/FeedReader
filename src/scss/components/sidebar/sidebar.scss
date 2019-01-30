@@ -2,10 +2,10 @@ aside {
     width: calc(25vw - 1px);
     float: left;
     height: 100vh;
-    border-right: 1px solid $separatingBorderColor;
+    border-right: 1px solid $darkBorderColor;
 
     #addContainer {
-        border-bottom: 1px solid $separatingBorderColor;
+        border-bottom: 1px solid $darkBorderColor;
         width: auto;
         padding: 15px;
 
