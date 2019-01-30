@@ -1,6 +1,7 @@
 import classNames from 'classnames';
 import * as React from 'react';
 import {connect} from 'react-redux';
+import {Dispatch} from 'redux';
 import {Sidebar} from './components/Sidebar';
 import {TOGGLE_DARKMODE} from './store/actions/AppAction';
 import {IAppStoreState} from './store/StoreType';
@@ -32,7 +33,7 @@ const mapStateToProps = (state: IAppStoreState): IAppStateProperties => {
     };
 };
 
-const mapDispatchToProps = (dispatch): IAppDispatchProperties => {
+const mapDispatchToProps = (dispatch: Dispatch): IAppDispatchProperties => {
     return {
         toggleDarkmode: () => { dispatch(TOGGLE_DARKMODE); },
     };
