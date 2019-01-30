@@ -1,0 +1,20 @@
+aside {
+    width: calc(25vw - 1px);
+    float: left;
+    height: 100vh;
+    border-right: 1px solid $separatingBorderColor;
+
+    #addContainer {
+        border-bottom: 1px solid $separatingBorderColor;
+        width: auto;
+        padding: 15px;
+
+        #logo {
+            background-image: url('../icons/png/32x32.png');
+            background-repeat: no-repeat;
+            width: 32px;
+            height: 32px;
+            display: inline-block;
+        }
+    }
+}

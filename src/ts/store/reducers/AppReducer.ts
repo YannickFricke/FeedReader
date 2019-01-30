@@ -6,6 +6,7 @@ import {IAppStoreState} from '../StoreType';
  */
 export const initialState: IAppStoreState = {
     feeds: [],
+    darkmode: false,
 };
 
 /**
@@ -19,8 +20,11 @@ export function AppReducer(state: IAppStoreState|undefined, action: IAppAction):
     }
 
     switch (action.type) {
-        case '':
-            break;
+        case 'TOGGLE_DARKMODE':
+            return {
+                ...state,
+                darkmode: !state.darkmode,
+            };
     }
 
     return state;

@@ -1,0 +1,12 @@
+@import '~normalize.css/normalize.css';
+@import './mixins/breakpoints.scss';
+@import './variables.scss';
+
+html,
+body,
+#root {
+    height: 100vh;
+    width: 100vw;
+}
+
+@import './components/app.scss';

@@ -8,10 +8,10 @@ import {Provider} from 'react-redux';
 import {createDefaultStore} from './ts/store/Store';
 
 // Application components
-import {App} from './ts/App';
+import App from './ts/App';
 
 // Load the styles
-import './scss/app.scss';
+import './scss/main.scss';
 
 ReactDom.render(
     <Provider store={createDefaultStore()}>
