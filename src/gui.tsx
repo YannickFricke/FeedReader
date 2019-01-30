@@ -17,5 +17,5 @@ ReactDom.render(
     <Provider store={createDefaultStore()}>
         <App/>
     </Provider>,
-    document.getElementById('app'),
+    document.getElementById('root'),
 );
