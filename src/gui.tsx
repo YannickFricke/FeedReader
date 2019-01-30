@@ -11,7 +11,7 @@ import {createDefaultStore} from './ts/store/Store';
 import {App} from './ts/App';
 
 // Load the styles
-import './sass/app.scss';
+import './scss/app.scss';
 
 ReactDom.render(
     <Provider store={createDefaultStore()}>

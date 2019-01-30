@@ -33,6 +33,9 @@
 		"moment": "^2.22.2",
 		"normalize.css": "^8.0.1",
 		"rss-parser": "^3.6.2",
+		"stylelint": "^9.10.1",
+		"stylelint-scss": "^3.5.1",
+		"stylelint-webpack-plugin": "^0.10.5",
 		"tslint-loader": "^3.5.4"
 	},
 	"devDependencies": {

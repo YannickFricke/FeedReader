@@ -1,7 +1,8 @@
-const path              = require('path');
-const htmlWebpackPlugin = require('html-webpack-plugin');
-const commonConfig      = require('./webpack.common.config');
+const path                = require('path');
+const htmlWebpackPlugin   = require('html-webpack-plugin');
+const commonConfig        = require('./webpack.common.config');
 const cleanTerminalPlugin = require('clean-terminal-webpack-plugin');
+const styleLintPlugin     = require('stylelint-webpack-plugin');
 
 const electronMain = Object.assign({
     target: 'electron-main',
@@ -21,6 +22,12 @@ const electronRenderer = Object.assign({
             template: path.resolve(__dirname, '..', '..', 'index.html')
         }),
         new cleanTerminalPlugin(),
+        new styleLintPlugin({
+            fix: true,
+            context: path.resolve(__dirname, '..', '..', 'scss'),
+            configFile: path.resolve(__dirname, '..', '..', '..', '.stylelintrc.json'),
+            syntax: 'scss',
+        }),
     ],
     mode     : 'development',
     devServer: {
