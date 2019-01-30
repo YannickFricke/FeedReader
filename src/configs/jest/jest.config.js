@@ -4,6 +4,7 @@ module.exports = {
 	collectCoverage: true,
 	collectCoverageFrom: [
 		'<rootDir>/src/ts/**/*.{ts,tsx}',
+		'!<rootDir>/src/ts/**/*.story.{ts,tsx}',
 		'!<rootDir>/**/node_modules/**',
 		'!<rootDir>/**/vendor/**',
 		'!<rootDir>/**/*.stories.tsx'
@@ -23,6 +24,5 @@ module.exports = {
 	snapshotSerializers: ["enzyme-to-json"],
 	testPathIgnorePatterns: [
 		'__mocks__/',
-		'__stories__'
 	]
 };
