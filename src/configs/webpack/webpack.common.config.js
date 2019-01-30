@@ -46,7 +46,7 @@ module.exports = {
             },
             {
                 test: /\.otf(\?.*)?$/,
-                use: 'file-loader?name=/fonts/[name].  [ext]&mimetype=application/font-otf'
+                use: 'file-loader?name=/fonts/[name].[ext]&mimetype=application/font-otf'
             }
         ]
     },
