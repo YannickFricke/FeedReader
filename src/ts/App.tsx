@@ -22,7 +22,8 @@ export class App extends React.Component<IAppStateProperties & IAppDispatchPrope
 
         return <div id="app" className={classes}>
                 <Sidebar />
-                <div id="content" onClick={() => this.props.toggleDarkmode()}></div>
+                <div id="content" onClick={() => this.props.toggleDarkmode()}>Content!</div>
+                <div id="reading">READING!</div>
             </div>;
     }
 }
