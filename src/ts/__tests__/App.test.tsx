@@ -1,12 +1,11 @@
-import { shallow } from 'enzyme';
+import { mount } from 'enzyme';
 import * as React from 'react';
-import App from '../App';
+import { App } from '../App';
 
-it('renders the app', () => {
-    const result = shallow(<App />);
+describe('App component', () => {
+    it('renders the app', () => {
+        const result = mount(<App darkmode={false} toggleDarkmode={jest.fn()} />);
 
-    expect(result).toBeTruthy();
-    /*
-    expect(result.text()).toContain('Got the following configuration path: mocked_directory');
-    */
+        expect(result).toBeTruthy();
+    });
 });
