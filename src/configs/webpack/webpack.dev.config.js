@@ -1,10 +1,9 @@
-const path                = require('path');
-const htmlWebpackPlugin   = require('html-webpack-plugin');
 const commonConfig        = require('./webpack.common.config');
+const path                = require('path');
 const cleanTerminalPlugin = require('clean-terminal-webpack-plugin');
 const styleLintPlugin     = require('stylelint-webpack-plugin');
 
-const electronMain = Object.assign({
+const electronMain = Object.assign({}, {
     target: 'electron-main',
     entry : {
         main: path.resolve(__dirname, '..', '..', 'main.ts')
@@ -12,23 +11,12 @@ const electronMain = Object.assign({
     mode: 'development'
 }, commonConfig);
 
-const electronRenderer = Object.assign({
+const electronRenderer = Object.assign({}, {
     target: 'electron-renderer',
     entry : {
         gui: path.resolve(__dirname, '..', '..', 'gui.tsx'),
     },
-    plugins: [
-        new htmlWebpackPlugin({
-            template: path.resolve(__dirname, '..', '..', 'index.html')
-        }),
-        new cleanTerminalPlugin(),
-        new styleLintPlugin({
-            fix: true,
-            context: path.resolve(__dirname, '..', '..', 'scss'),
-            configFile: path.resolve(__dirname, '..', '..', '..', '.stylelintrc.json'),
-            syntax: 'scss',
-        }),
-    ],
+    devtool  : 'cheap-module-source-map',
     mode     : 'development',
     devServer: {
         contentBase: path.join(__dirname, '..', '..', '..', 'dist'),
@@ -39,19 +27,18 @@ const electronRenderer = Object.assign({
     }
 }, commonConfig);
 
-const tsLintLoader = {
-    loader : 'tslint-loader',
-    options: {
+const newPlugins = [
+    ...commonConfig.plugins,
+    new cleanTerminalPlugin(),
+    new styleLintPlugin({
         fix       : true,
-        configFile: 'tslint.json',
-        emitErrors: true,
-        typeCheck : true
-    }
-};
+        context   : path.resolve(__dirname, '..', '..', 'scss'),
+        configFile: path.resolve(__dirname, '..', '..', '..', '.stylelintrc.json'),
+        syntax    : 'scss',
+    }),
+];
 
-// Push the tslint loader
-electronMain.module.rules[0].use.push(tsLintLoader);
-electronRenderer.module.rules[0].use.push(tsLintLoader);
+electronRenderer.plugins = newPlugins;
 
 module.exports = [
     electronMain,
