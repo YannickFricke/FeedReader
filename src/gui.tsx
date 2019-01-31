@@ -12,9 +12,10 @@ import App from './ts/App';
 
 // Load the styles
 import './scss/main.scss';
+import { createBrowserHistory } from 'history';
 
 ReactDom.render(
-    <Provider store={createDefaultStore()}>
+    <Provider store={createDefaultStore(createBrowserHistory())}>
         <App/>
     </Provider>,
     document.getElementById('root'),

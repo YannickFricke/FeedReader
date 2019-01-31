@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { Dispatch } from 'redux';
 import { Sidebar } from './components/Sidebar';
 import { TOGGLE_DARKMODE } from './store/actions/AppAction';
-import { IAppStoreState } from './store/StoreType';
+import { IApplicationState } from './store/StoreType';
 
 interface IAppStateProperties {
     darkmode: boolean;
@@ -28,9 +28,9 @@ export class App extends React.Component<IAppStateProperties & IAppDispatchPrope
     }
 }
 
-const mapStateToProps = (state: IAppStoreState): IAppStateProperties => {
+const mapStateToProps = (state: IApplicationState): IAppStateProperties => {
     return {
-        darkmode: state.darkmode,
+        darkmode: state.app.darkmode,
     };
 };
 

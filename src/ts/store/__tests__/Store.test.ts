@@ -1,4 +1,4 @@
-import { initialState } from '../reducers/AppReducer';
+import { createMemoryHistory } from 'history';
 import { createDefaultStore } from '../Store';
 
 // Declare the "global" variable as type "any" for testing purposes
@@ -11,10 +11,9 @@ describe('Store tests', () => {
             devToolsExtension: jest.fn(),
         };
 
-        const result = createDefaultStore();
+        const result = createDefaultStore(createMemoryHistory());
 
         expect(result).not.toBeUndefined();
-        expect(result.getState()).toMatchObject(initialState);
     });
 
     it('returns an store without devtools', () => {
@@ -22,9 +21,8 @@ describe('Store tests', () => {
             devToolsExtension: undefined,
         };
 
-        const result = createDefaultStore();
+        const result = createDefaultStore(createMemoryHistory());
 
         expect(result).not.toBeUndefined();
-        expect(result.getState()).toMatchObject(initialState);
     });
 });
