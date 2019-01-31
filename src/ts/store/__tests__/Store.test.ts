@@ -2,6 +2,7 @@ import { initialState } from '../reducers/AppReducer';
 import { createDefaultStore } from '../Store';
 
 // Declare the "global" variable as type "any" for testing purposes
+// tslint:disable-next-line:no-any
 declare var global: any;
 
 describe('Store tests', () => {
