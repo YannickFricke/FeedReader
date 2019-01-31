@@ -1,4 +1,4 @@
-import {IFeed} from '../definitions/IFeed';
+import { IFeed } from '../definitions/IFeed';
 
 export interface IAppStoreState {
     feeds: IFeed[];

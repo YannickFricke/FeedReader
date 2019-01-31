@@ -1,4 +1,4 @@
-import {IPost} from './IPost';
+import { IPost } from './IPost';
 
 export interface IFeed {
     /**

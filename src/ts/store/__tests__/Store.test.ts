@@ -1,5 +1,5 @@
-import {initialState} from '../reducers/AppReducer';
-import {createDefaultStore} from '../Store';
+import { initialState } from '../reducers/AppReducer';
+import { createDefaultStore } from '../Store';
 
 // Declare the "global" variable as type "any" for testing purposes
 declare var global: any;

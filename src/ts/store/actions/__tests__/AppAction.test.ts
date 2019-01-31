@@ -1,4 +1,4 @@
-import {FETCH_FEEDS, TOGGLE_DARKMODE} from '../AppAction';
+import { FETCH_FEEDS, TOGGLE_DARKMODE } from '../AppAction';
 
 it('Checks the FetchFeeds action', () => {
     const result = FETCH_FEEDS;
