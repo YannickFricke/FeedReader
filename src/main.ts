@@ -1,6 +1,6 @@
-import {app, BrowserWindow} from 'electron';
-import installExtension, {REACT_DEVELOPER_TOOLS, REDUX_DEVTOOLS} from 'electron-devtools-installer';
-import {join} from 'path';
+import { app, BrowserWindow } from 'electron';
+import installExtension, { REACT_DEVELOPER_TOOLS, REDUX_DEVTOOLS } from 'electron-devtools-installer';
+import { join } from 'path';
 
 declare var __dirname: string;
 

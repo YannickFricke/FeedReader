@@ -1,5 +1,5 @@
-import {createStore} from 'redux';
-import {AppReducer, initialState} from './reducers/AppReducer';
+import { createStore } from 'redux';
+import { AppReducer, initialState } from './reducers/AppReducer';
 
 // tslint:disable-next-line
 declare var window: any;

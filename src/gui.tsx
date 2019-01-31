@@ -2,10 +2,10 @@ import * as React from 'react';
 import * as ReactDom from 'react-dom';
 
 // Provides the store (state) to all subcomponents
-import {Provider} from 'react-redux';
+import { Provider } from 'react-redux';
 
 // Application store (state management)
-import {createDefaultStore} from './ts/store/Store';
+import { createDefaultStore } from './ts/store/Store';
 
 // Application components
 import App from './ts/App';

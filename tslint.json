@@ -10,6 +10,7 @@
         "curly": true,
         "encoding": true,
         "eofline": true,
+        "import-spacing": true,
         "indent": [true, "spaces", 4],
         "member-access": true,
         "member-ordering": [true, {"order": "fields-first"}],
@@ -34,7 +35,8 @@
         "semicolon": [true, "always"],
         "triple-equals": true,
         "use-isnan": true,
-        "variable-name": true
+        "variable-name": true,
+        "whitespace": [true, "check-module"]
     },
     "rulesDirectory": [],
     "linterOptions": {

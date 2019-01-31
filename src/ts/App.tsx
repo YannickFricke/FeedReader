@@ -1,10 +1,10 @@
 import classNames from 'classnames';
 import * as React from 'react';
-import {connect} from 'react-redux';
-import {Dispatch} from 'redux';
-import {Sidebar} from './components/Sidebar';
-import {TOGGLE_DARKMODE} from './store/actions/AppAction';
-import {IAppStoreState} from './store/StoreType';
+import { connect } from 'react-redux';
+import { Dispatch } from 'redux';
+import { Sidebar } from './components/Sidebar';
+import { TOGGLE_DARKMODE } from './store/actions/AppAction';
+import { IAppStoreState } from './store/StoreType';
 
 interface IAppStateProperties {
     darkmode: boolean;
