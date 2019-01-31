@@ -1,7 +1,7 @@
 module.exports = {
-	preset: 'ts-jest',
-	testEnvironment: 'node',
-	collectCoverage: true,
+	preset             : 'ts-jest',
+	testEnvironment    : 'node',
+	collectCoverage    : true,
 	collectCoverageFrom: [
 		'<rootDir>/src/ts/**/*.{ts,tsx}',
 		'!<rootDir>/src/ts/**/*.story.{ts,tsx}',
@@ -10,18 +10,22 @@ module.exports = {
 		'!<rootDir>/**/*.stories.tsx'
 	],
 	coverageDirectory: '<rootDir>/code-cov/',
-	moduleNameMapper: {
-		"electron": "<rootDir>/__mocks__/electron.js"
+	moduleNameMapper : {
+		'electron': '<rootDir>/__mocks__/electron.js'
 	},
 	rootDir: '../../../',
-	roots: [
+	roots  : [
 		'<rootDir>/src/ts/'
 	],
 	setupFiles: [
-		'<rootDir>/src/configs/jest/test-setup.ts',
 		'<rootDir>/src/configs/jest/test-shim.js'
 	],
-	snapshotSerializers: ["enzyme-to-json"],
+	setupTestFrameworkScriptFile: 'jest-enzyme',
+	testEnvironment             : 'enzyme',
+	testEnvironmentOptions      : {
+		'enzymeAdapter': 'react16'
+	},
+	snapshotSerializers   : ['enzyme-to-json'],
 	testPathIgnorePatterns: [
 		'__mocks__/',
 	]
