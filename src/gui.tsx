@@ -1,6 +1,7 @@
 import * as React from 'react';
 import * as ReactDom from 'react-dom';
 import { createGlobalStyle } from 'styled-components';
+import ConnectedThemeProvider from './ts/theme/ConnectedThemeProvider';
 
 // Provides the store (state) to all subcomponents
 import { Provider } from 'react-redux';
@@ -25,10 +26,14 @@ const GLOBALSTYLE = createGlobalStyle`
     }
 `;
 
+const reduxStore = createDefaultStore(createBrowserHistory());
+
 ReactDom.render(
-    <Provider store={createDefaultStore(createBrowserHistory())}>
-        <GLOBALSTYLE />
-        <App />
+    <Provider store={reduxStore}>
+        <ConnectedThemeProvider>
+            <GLOBALSTYLE />
+            <App />
+        </ConnectedThemeProvider>
     </Provider>,
     document.getElementById('root'),
 );
