@@ -1,6 +1,8 @@
-const path                 = require('path');
-const htmlWebpackPlugin    = require('html-webpack-plugin');
-const miniCssExtractPlugin = require('mini-css-extract-plugin');
+const path                              = require('path');
+const htmlWebpackPlugin                 = require('html-webpack-plugin');
+const miniCssExtractPlugin              = require('mini-css-extract-plugin');
+const createStyledComponentsTransformer = require('typescript-plugin-styled-components').default;
+const styledComponentsTransformer       = createStyledComponentsTransformer();
 
 module.exports = {
     output: {
@@ -11,9 +13,10 @@ module.exports = {
         rules: [
             {
                 test: /\.tsx?$/,
-                use: [
-                    'awesome-typescript-loader'
-                ]
+                loader: 'awesome-typescript-loader',
+                options: {
+                    getCustomTransformers: () => ({ before: [styledComponentsTransformer] })
+                }
             },
             {
                 test: /\.html$/,
