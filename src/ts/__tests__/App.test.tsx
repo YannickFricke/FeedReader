@@ -1,6 +1,7 @@
 import { mount } from 'enzyme';
 import * as React from 'react';
-import { App } from '../App';
+import { App, mapDispatchToProps  } from '../App';
+import { TOGGLE_DARKMODE } from '../store/actions/AppAction';
 
 describe('App component', () => {
     it('renders the app', () => {
@@ -17,5 +18,17 @@ describe('App component', () => {
 
         expect(toggleDarkMode).toBeCalled();
         expect(toggleDarkMode).toBeCalledTimes(1);
-});
+    });
+
+    it('should map the state to the props', () => {
+        const mockedDispatchFunction = jest.fn();
+
+        const mapping = mapDispatchToProps(mockedDispatchFunction);
+
+        mapping.toggleDarkmode();
+
+        expect(mockedDispatchFunction).toBeCalled();
+        expect(mockedDispatchFunction).toBeCalledTimes(1);
+        expect(mockedDispatchFunction).toBeCalledWith(TOGGLE_DARKMODE);
+    });
 });

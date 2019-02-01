@@ -39,7 +39,7 @@ export class App extends React.Component<IAppDispatchProperties> {
     }
 }
 
-const mapDispatchToProps = (dispatch: Dispatch): IAppDispatchProperties => {
+export const mapDispatchToProps = (dispatch: Dispatch): IAppDispatchProperties => {
     return {
         toggleDarkmode: () => { dispatch(TOGGLE_DARKMODE); },
     };
