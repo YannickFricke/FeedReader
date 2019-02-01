@@ -12,8 +12,6 @@ describe('App component', () => {
     it('should invoke the TOGGLE_DARKMODE function when clicking on the content', () => {
         const toggleDarkMode = jest.fn();
         const result = mount(<App darkmode={false} toggleDarkmode={toggleDarkMode} />);
-        // tslint:disable-next-line:no-console
-        console.log(result.state());
 
         result.find('#content').simulate('click');
 
