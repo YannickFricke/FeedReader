@@ -35,12 +35,12 @@ function checkReviewers() {
     const reviewers: string[] = [];
 
     if (danger.github.requested_reviewers.length > 0) {
-        for (const reviewer in danger.github.requested_reviewers) {
-            reviewers.push(`\n- @${reviewer}`);
-        }
+        danger.github.requested_reviewers.forEach((reviewer: GitHubUser) => {
+            reviewers.push(`\n- @${reviewer.login}`);
+        });
     }
 
-    danger.github.requested_reviewers.length === 0 ?
+    reviewers.length === 0 ?
     warn(`${Symbols.warning} There are no reviewers assigned to this pull request!`) :
-    message(`${Symbols.ok} Assigned reviewers: ${reviewers.join()}`);
+    message(`${Symbols.ok} Assigned reviewers: ${reviewers.join('')}`);
 }
