@@ -11,24 +11,57 @@ checkAssignee();
 checkWIPStatus();
 checkReviewers();
 
+function isNullOrUndefined(value) {
+    return value === null ||
+           value === undefined;
+}
+
+function isPr(): boolean {
+    if (isNullOrUndefined(danger.github)) {
+        return false;
+    }
+
+    if (isNullOrUndefined(danger.github.pr)) {
+        return false;
+    }
+
+    return true;
+}
+
 function writeModifiedFiles() {
     const modifiedFiles = danger.git.modified_files.join('\n- ');
-    message(`${Symbols.changed} Changed Files in this PR: \n- ` + modifiedFiles);
+    message(`${Symbols.changed} Changed Files: \n- ` + modifiedFiles);
 }
 
 function checkAssignee() {
-    if (!danger.github.pr.assignee) {
+    if (!isPr()) {
+        return;
+    }
+
+    if (danger.github.pr !== undefined &&!danger.github.pr.assignee) {
         fail(`This pull request needs an assignee!`);
     }
 }
 
 function checkWIPStatus() {
-    danger.github.pr.title.includes('WIP') ?
+    if (!isPr()) {
+        return;
+    }
+
+    danger.github.pr !== undefined && danger.github.pr.title.includes('WIP') ?
         warn(`${Symbols.construction} Pull request is currently in work! ${Symbols.construction}`) :
         message(`${Symbols.ok} Pull request is ready to merge!`);
 }
 
 async function checkReviewers() {
+    if (!isPr()) {
+        return;
+    }
+    
+    if (danger.github.thisPR === undefined) {
+        return;
+    }
+
     const permissionLevel = await danger.github.api.repos.getCollaboratorPermissionLevel({
         owner: danger.github.thisPR.owner,
         repo: danger.github.thisPR.repo,
