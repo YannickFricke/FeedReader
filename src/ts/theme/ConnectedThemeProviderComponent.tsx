@@ -4,17 +4,19 @@ import { ThemeProvider } from 'styled-components';
 import { IApplicationState } from '../store/StoreType';
 import { ITheme } from './ITheme';
 
+export interface IConnectedThemeProviderComponentProps {
+    theme: ITheme;
+}
+
 /**
  * A ThemeProvider for styled-components
  *
  * @author Yannick Fricke <yannickfricke@googlemail.com>
  * @license MIT
  */
-export class ConnectedThemeProvider extends React.Component<ITheme> {
+export class ConnectedThemeProviderComponent extends React.Component<IConnectedThemeProviderComponentProps> {
     public render() {
-        return <ThemeProvider theme={{
-            darkmode: this.props.darkmode,
-        }}>
+        return <ThemeProvider theme={this.props.theme}>
             <React.Fragment>
                 {this.props.children}
             </React.Fragment>
@@ -29,7 +31,7 @@ export class ConnectedThemeProvider extends React.Component<ITheme> {
  * @author Yannick Fricke <yannickfricke@googlemail.com>
  * @license MIT
  */
-const mapStateToProps = (state: IApplicationState): ITheme => {
+export const mapStateToProps = (state: IApplicationState): ITheme => {
     return {
         darkmode: state.app.darkmode,
     };
@@ -40,4 +42,4 @@ const mapStateToProps = (state: IApplicationState): ITheme => {
  * @author Yannick Fricke <yannickfricke@googlemail.com>
  * @license MIT
  */
-export default connect(mapStateToProps)(ConnectedThemeProvider);
+export default connect(mapStateToProps)(ConnectedThemeProviderComponent);
