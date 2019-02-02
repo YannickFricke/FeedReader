@@ -38,7 +38,7 @@ function checkAssignee() {
         return;
     }
 
-    if (danger.github.pr !== undefined &&!danger.github.pr.assignee) {
+    if (!danger.github.pr.assignee) {
         fail(`This pull request needs an assignee!`);
     }
 }
@@ -48,7 +48,11 @@ function checkWIPStatus() {
         return;
     }
 
-    danger.github.pr !== undefined && danger.github.pr.title.includes('WIP') ?
+    if (isNullOrUndefined(danger.github.pr.title)) {
+        return;
+    }
+
+    danger.github.pr.title.includes('WIP') ?
         warn(`${Symbols.construction} Pull request is currently in work! ${Symbols.construction}`) :
         message(`${Symbols.ok} Pull request is ready to merge!`);
 }
@@ -58,7 +62,11 @@ async function checkReviewers() {
         return;
     }
     
-    if (danger.github.thisPR === undefined) {
+    if (isNullOrUndefined(danger.github.thisPR)) {
+        return;
+    }
+
+    if (isNullOrUndefined(danger.github.requested_reviewers)) {
         return;
     }
 
