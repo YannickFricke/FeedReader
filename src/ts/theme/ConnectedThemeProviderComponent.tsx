@@ -5,7 +5,7 @@ import { IApplicationState } from '../store/StoreType';
 import { ITheme } from './ITheme';
 
 export interface IConnectedThemeProviderComponentProps {
-    theme: ITheme;
+    theme?: ITheme;
 }
 
 /**
@@ -31,9 +31,11 @@ export class ConnectedThemeProviderComponent extends React.Component<IConnectedT
  * @author Yannick Fricke <yannickfricke@googlemail.com>
  * @license MIT
  */
-export const mapStateToProps = (state: IApplicationState): ITheme => {
+export const mapStateToProps = (state: IApplicationState): IConnectedThemeProviderComponentProps => {
     return {
-        darkmode: state.app.darkmode,
+        theme: {
+            darkmode: state.app.darkmode,
+        },
     };
 };
 
