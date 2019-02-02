@@ -5,9 +5,18 @@ import { IApplicationState } from '../../store/StoreType';
 import { ConnectedThemeProviderComponent, mapStateToProps } from '../ConnectedThemeProviderComponent';
 import { ITheme } from '../ITheme';
 
-describe('ConnectedThemeProvider', () => {
-
+describe('ConnectedThemeProviderComponent', () => {
     it('should render correctly', () => {
+        const theme: ITheme = {
+            darkmode: false,
+        };
+
+        const component = mount(<ConnectedThemeProviderComponent theme={theme} />);
+
+        expect(component).toBeTruthy();
+    });
+
+    it('should render the children', () => {
         const theme: ITheme = {
             darkmode: false,
         };
@@ -15,8 +24,7 @@ describe('ConnectedThemeProvider', () => {
         const component = mount(<ConnectedThemeProviderComponent theme={theme}>
             <div id="test" />
         </ConnectedThemeProviderComponent>);
-
-        expect(component).toBeTruthy();
+        expect(component.contains(<div id="test" />)).toBeTruthy();
     });
 
     it('should map the state to the properties', () => {
