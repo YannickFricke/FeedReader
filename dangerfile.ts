@@ -32,11 +32,15 @@ function checkWIPStatus() {
 }
 
 function checkReviewers() {
-    const reviewers = danger.github.requested_reviewers.map((gitHubUser: GitHubUser) => {
-        return `- ${gitHubUser.login}`;
-    });
+    const reviewers: string[] = [];
+
+    if (danger.github.requested_reviewers.length > 0) {
+        for (const reviewer in danger.github.requested_reviewers) {
+            reviewers.push(`\n- @${reviewer}`);
+        }
+    }
 
     danger.github.requested_reviewers.length === 0 ?
     warn(`${Symbols.warning} There are no reviewers assigned to this pull request!`) :
-    message(`${Symbols.ok} Assigned reviewers: \n- @${reviewers.join('- @')}`);
+    message(`${Symbols.ok} Assigned reviewers: ${reviewers.join()}`);
 }
