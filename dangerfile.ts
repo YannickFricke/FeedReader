@@ -28,7 +28,20 @@ function checkWIPStatus() {
         message(`${Symbols.ok} Pull request is ready to merge!`);
 }
 
-function checkReviewers() {
+async function checkReviewers() {
+    const permissionLevel = await danger.github.api.repos.getCollaboratorPermissionLevel({
+        owner: danger.github.thisPR.owner,
+        repo: danger.github.thisPR.repo,
+        username: danger.github.pr.user.login
+    });
+
+    if (
+        permissionLevel.data.permission === 'write' || 
+        permissionLevel.data.permission === 'admin'
+    ) {
+        return;
+    }
+
     const reviewers: string[] = [];
 
     if (danger.github.requested_reviewers.length > 0) {
