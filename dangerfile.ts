@@ -3,10 +3,7 @@ import { danger, fail, GitHubUser, message, warn } from 'danger';
 const Symbols = {
     changed     : ':pencil:',
     construction: ':construction:',
-    o           : ':o:',
     ok          : ':heavy_check_mark:',
-    warning     : ':warning:',
-    x           : ':heavy_multiplication_x:',
 };
 
 writeModifiedFiles();
@@ -21,13 +18,13 @@ function writeModifiedFiles() {
 
 function checkAssignee() {
     if (!danger.github.pr.assignee) {
-        fail(`${Symbols.x} This pull request needs an assignee!`);
+        fail(`This pull request needs an assignee!`);
     }
 }
 
 function checkWIPStatus() {
     danger.github.pr.title.includes('WIP') ?
-        fail(`${Symbols.construction} Pull request is currently in work!`) :
+        fail(`${Symbols.construction} Pull request is currently in work! ${Symbols.construction}`) :
         message(`${Symbols.ok} Pull request is ready to merge!`);
 }
 
@@ -41,6 +38,6 @@ function checkReviewers() {
     }
 
     reviewers.length === 0 ?
-    warn(`${Symbols.warning} There are no reviewers assigned to this pull request!`) :
+    warn(`There are no reviewers assigned to this pull request!`) :
     message(`${Symbols.ok} Assigned reviewers: ${reviewers.join('')}`);
 }
