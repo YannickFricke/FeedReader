@@ -24,7 +24,7 @@ function checkAssignee() {
 
 function checkWIPStatus() {
     danger.github.pr.title.includes('WIP') ?
-        fail(`${Symbols.construction} Pull request is currently in work! ${Symbols.construction}`) :
+        warn(`${Symbols.construction} Pull request is currently in work! ${Symbols.construction}`) :
         message(`${Symbols.ok} Pull request is ready to merge!`);
 }
 
