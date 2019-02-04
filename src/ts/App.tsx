@@ -4,7 +4,6 @@ import { Dispatch } from 'redux';
 import styled from 'styled-components';
 import { Sidebar } from './components/Sidebar';
 import { TOGGLE_DARKMODE } from './store/actions/AppAction';
-import { ITheme } from './theme/ITheme';
 import { IThemeConfiguration } from './theme/IThemeConfiguration';
 
 export interface IAppDispatchProperties {
@@ -22,12 +21,6 @@ const APP_CONTAINER = styled.div`
         return props.theme.darkmode ? '#f0f0f0' : 'black';
     }};
 `;
-
-APP_CONTAINER.defaultProps = {
-    theme: {
-        darkmode: false,
-    } as ITheme,
-};
 
 export class App extends React.Component<IAppDispatchProperties> {
     public render() {
