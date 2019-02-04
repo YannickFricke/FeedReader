@@ -51,7 +51,10 @@ module.exports = {
             },
             {
                 test: /\.jpe?g$|\.gif$|\.ico$|\.png$|\.svg$/,
-                use: 'file-loader?name=[name].[ext]?[hash]'
+                use: [
+                    'file-loader?name=[name].[ext]?[hash]',
+                    'image-webpack-loader'
+                ],
             },
             {
                 test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
