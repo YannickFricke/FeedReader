@@ -14,7 +14,7 @@ describe('App component', () => {
         const toggleDarkMode = jest.fn();
         const result = mount(<App toggleDarkmode={toggleDarkMode} />);
 
-        result.find('#content').simulate('click');
+        result.find('Content').simulate('click');
 
         expect(toggleDarkMode).toBeCalled();
         expect(toggleDarkMode).toBeCalledTimes(1);
