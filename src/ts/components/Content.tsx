@@ -14,7 +14,7 @@ interface IContentProperties {
 
 export class Content extends React.Component<IContentProperties> {
     public render() {
-        return <ContentWrapper id={'content'} onClick={this.props.onClick}>
+        return <ContentWrapper onClick={this.props.onClick}>
             {this.props.children}
         </ContentWrapper>;
     }
