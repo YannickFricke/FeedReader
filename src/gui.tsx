@@ -24,6 +24,10 @@ const GLOBALSTYLE = createGlobalStyle`
         height     : 100vh;
         width      : 100vw;
     }
+
+    * {
+        cursor: default;
+    }
 `;
 
 const reduxStore = createDefaultStore(createBrowserHistory());
