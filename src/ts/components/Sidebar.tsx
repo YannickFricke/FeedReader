@@ -3,12 +3,10 @@ import styled from 'styled-components';
 import Logo from '../../icons/png/32x32.png';
 import { IThemeConfiguration } from '../theme/IThemeConfiguration';
 
-const Sidebar = styled.aside`
-    & {
-        border-right: 1px solid ${(props: IThemeConfiguration) => {
-            return props.theme.darkmode ? '#f0f0f0' : '#212121';
-        }};
-    }
+const SidebarWrapper = styled.aside`
+    border-right: 1px solid ${(props: IThemeConfiguration) => {
+        return props.theme.darkmode ? '#f0f0f0' : '#212121';
+    }};
 
     #addContainer {
         border-bottom: 1px solid ${(props: IThemeConfiguration) => {
@@ -26,13 +24,13 @@ const Sidebar = styled.aside`
     }
 `;
 
-export default class extends React.Component {
+export class Sidebar extends React.Component {
     public render() {
-        return <Sidebar>
+        return <SidebarWrapper>
             <div id="addContainer">
                 <img src={Logo} alt={'logo'} width={'32px'} height={'32px'} />
                 <div id="heading">FeedReader</div>
             </div>
-        </Sidebar>;
+        </SidebarWrapper>;
     }
 }

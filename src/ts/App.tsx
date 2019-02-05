@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Dispatch } from 'redux';
 import styled from 'styled-components';
 import { Content } from './components/Content';
-import Sidebar from './components/Sidebar';
+import { Sidebar } from './components/Sidebar';
 import { TOGGLE_DARKMODE } from './store/actions/AppAction';
 import { IThemeConfiguration } from './theme/IThemeConfiguration';
 
