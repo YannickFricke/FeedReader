@@ -13,8 +13,8 @@ FeedReader is an electron application for reading RSS feeds in a beautiful GUI. 
 
 ## Requirements
 
-* A recent version of [Node.js](https://nodejs.org/)
-* A recent version of [Yarn](https://yarnpkg.com/)
+- A recent version of [Node.js](https://nodejs.org/)
+- A recent version of [Yarn](https://yarnpkg.com/)
 
 ## Installation
 
