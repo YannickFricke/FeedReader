@@ -2,6 +2,7 @@ import * as React from 'react';
 import styled from 'styled-components';
 import LogoImage from '../../icons/png/32x32.png';
 import { IThemeConfiguration } from '../theme/IThemeConfiguration';
+import { Menu } from './Menu';
 
 const SidebarWrapper = styled.aside`
     border-right: 1px solid ${(props: IThemeConfiguration) => {
@@ -35,6 +36,7 @@ export class Sidebar extends React.Component {
                 <Logo id={'logo'} src={LogoImage} alt={'logo'} width={'32px'} height={'32px'} />
                 <Heading>FeedReader</Heading>
             </SidebarContainer>
+            <Menu />
         </SidebarWrapper>;
     }
 }
