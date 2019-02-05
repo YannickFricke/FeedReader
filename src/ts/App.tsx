@@ -11,7 +11,7 @@ export interface IAppDispatchProperties {
     toggleDarkmode(): void;
 }
 
-const AppContainer = styled.div`
+const AppWrapper = styled.div`
     display              : grid;
     grid-template-columns: 20% 30% 50%;
     height               : 100vh;
@@ -25,11 +25,11 @@ const AppContainer = styled.div`
 
 export class App extends React.Component<IAppDispatchProperties> {
     public render() {
-        return <AppContainer>
+        return <AppWrapper>
             <Sidebar />
             <Content onClick={() => this.props.toggleDarkmode()}>Content!</Content>
             <div id="reading">READING!</div>
-        </AppContainer>;
+        </AppWrapper>;
     }
 }
 
