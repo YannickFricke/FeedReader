@@ -35,7 +35,7 @@
         "semicolon": [true, "always"],
         "triple-equals": true,
         "use-isnan": true,
-        "variable-name": true,
+        "variable-name": [true, "allow-pascal-case"],
         "whitespace": [true, "check-module"]
     },
     "rulesDirectory": [],
