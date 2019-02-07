@@ -1,35 +1,33 @@
 import { mount } from 'enzyme';
+import { createMemoryHistory } from 'history';
 import * as React from 'react';
-import { App, mapDispatchToProps  } from '../App';
-import { TOGGLE_DARKMODE } from '../store/actions/AppAction';
+import { Provider } from 'react-redux';
+import { App } from '../App';
+import { createDefaultStore } from '../store/Store';
 
 import 'jest-enzyme';
+import 'jest-styled-components';
+
+const store = createDefaultStore(createMemoryHistory());
+
 describe('App component', () => {
     it('renders the app', () => {
-        const result = mount(<App toggleDarkmode={jest.fn()} />);
+        const result = mount(
+            <Provider store={store}>
+                <App />
+            </Provider>,
+        );
 
         expect(result).toBeTruthy();
     });
 
-    it('should invoke the TOGGLE_DARKMODE function when clicking on the content', () => {
-        const toggleDarkMode = jest.fn();
-        const result = mount(<App toggleDarkmode={toggleDarkMode} />);
+    it('should render the right background color', () => {
+        const result = mount(
+            <Provider store={store}>
+                <App />
+            </Provider>,
+        );
 
-        result.find('Content').simulate('click');
-
-        expect(toggleDarkMode).toBeCalled();
-        expect(toggleDarkMode).toBeCalledTimes(1);
-    });
-
-    it('should map the state to the props', () => {
-        const mockedDispatchFunction = jest.fn();
-
-        const mapping = mapDispatchToProps(mockedDispatchFunction);
-
-        mapping.toggleDarkmode();
-
-        expect(mockedDispatchFunction).toBeCalled();
-        expect(mockedDispatchFunction).toBeCalledTimes(1);
-        expect(mockedDispatchFunction).toBeCalledWith(TOGGLE_DARKMODE);
+        expect(result.find('App')).toHaveStyleRule('background-color', '#fdfdfd');
     });
 });

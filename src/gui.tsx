@@ -10,7 +10,7 @@ import { Provider } from 'react-redux';
 import { createDefaultStore } from './ts/store/Store';
 
 // Application components
-import App from './ts/App';
+import { App } from './ts/App';
 
 import { createBrowserHistory } from 'history';
 

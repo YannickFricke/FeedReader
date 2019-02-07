@@ -1,19 +1,12 @@
 import * as React from 'react';
-import { connect } from 'react-redux';
-import { Dispatch } from 'redux';
 import styled from 'styled-components';
-import { Content } from './components/Content';
+import { Home } from './components/Home';
 import { Sidebar } from './components/Sidebar';
-import { TOGGLE_DARKMODE } from './store/actions/AppAction';
 import { IThemeConfiguration } from './theme/IThemeConfiguration';
-
-export interface IAppDispatchProperties {
-    toggleDarkmode(): void;
-}
 
 const AppWrapper = styled.div`
     display              : grid;
-    grid-template-columns: 20% 30% 50%;
+    grid-template-columns: 20% 80%;
     height               : 100vh;
     background-color: ${(props: IThemeConfiguration) => {
         return props.theme.darkmode ? '#2f2f2f' : '#fdfdfd';
@@ -23,20 +16,11 @@ const AppWrapper = styled.div`
     }};
 `;
 
-export class App extends React.Component<IAppDispatchProperties> {
+export class App extends React.Component {
     public render() {
         return <AppWrapper>
             <Sidebar />
-            <Content onClick={() => this.props.toggleDarkmode()}>Content!</Content>
-            <div id="reading">READING!</div>
+            <Home />
         </AppWrapper>;
     }
 }
-
-export const mapDispatchToProps = (dispatch: Dispatch): IAppDispatchProperties => {
-    return {
-        toggleDarkmode: () => { dispatch(TOGGLE_DARKMODE); },
-    };
-};
-
-export default connect(undefined, mapDispatchToProps)(App);

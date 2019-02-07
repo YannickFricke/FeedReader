@@ -1,5 +1,9 @@
 import * as React from 'react';
+import { connect } from 'react-redux';
 import styled from 'styled-components';
+import { IFeed } from '../definitions/IFeed';
+import { IPost } from '../definitions/IPost';
+import { IApplicationState } from '../store/StoreType';
 import { IThemeConfiguration } from '../theme/IThemeConfiguration';
 
 const ContentWrapper = styled.div`
@@ -9,13 +13,41 @@ const ContentWrapper = styled.div`
 `;
 
 interface IContentProperties {
-    onClick: () => void;
+    posts: IPost[];
 }
 
 export class Content extends React.Component<IContentProperties> {
     public render() {
-        return <ContentWrapper onClick={this.props.onClick}>
+        if (this.props.posts.length === 0) {
+            return <ContentWrapper style={{
+                color: 'grey',
+                textAlign: 'center',
+                paddingTop: '10vh',
+            }}>
+                We don't have any posts
+            </ContentWrapper>;
+        }
+
+        return <ContentWrapper>
             {this.props.children}
         </ContentWrapper>;
     }
 }
+
+const extractPostsFromState = (state: IApplicationState): IPost[] => {
+    const posts: IPost[] = [];
+
+    state.app.feeds.forEach((feed: IFeed) => {
+        posts.concat(feed.posts);
+    });
+
+    return posts;
+};
+
+const mapStateToProps = (state: IApplicationState): IContentProperties => {
+    return {
+        posts: extractPostsFromState(state),
+    };
+};
+
+export default connect(mapStateToProps)(Content);
