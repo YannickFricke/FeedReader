@@ -3,6 +3,7 @@ import * as React from 'react';
 import { App, mapDispatchToProps  } from '../App';
 import { TOGGLE_DARKMODE } from '../store/actions/AppAction';
 
+import 'jest-enzyme';
 describe('App component', () => {
     it('renders the app', () => {
         const result = mount(<App toggleDarkmode={jest.fn()} />);

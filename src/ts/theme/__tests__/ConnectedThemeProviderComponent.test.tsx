@@ -5,6 +5,8 @@ import { IApplicationState } from '../../store/StoreType';
 import { ConnectedThemeProviderComponent, mapStateToProps } from '../ConnectedThemeProviderComponent';
 import { ITheme } from '../ITheme';
 
+import 'jest-enzyme';
+
 describe('ConnectedThemeProviderComponent', () => {
     it('should render correctly', () => {
         const theme: ITheme = {

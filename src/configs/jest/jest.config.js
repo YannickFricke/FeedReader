@@ -20,7 +20,6 @@ module.exports = {
 	setupFiles: [
 		'<rootDir>/src/configs/jest/test-shim.js'
 	],
-	setupTestFrameworkScriptFile: '<rootDir>/src/configs/jest/test-setup.ts',
 	testEnvironment             : 'enzyme',
 	testEnvironmentOptions      : {
 		'enzymeAdapter': 'react16'

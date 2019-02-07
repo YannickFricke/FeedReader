@@ -2,6 +2,8 @@ import { mount } from 'enzyme';
 import * as React from 'react';
 import { Menu } from '../Menu';
 
+import 'jest-enzyme';
+
 describe('Menu', () => {
     it('should render without crashing', () => {
         const result = mount(<Menu />);
