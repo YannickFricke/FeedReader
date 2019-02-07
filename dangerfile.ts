@@ -29,8 +29,7 @@ function isPr(): boolean {
 }
 
 function writeModifiedFiles() {
-    const modifiedFiles = danger.git.modified_files.join('\n- ');
-    message(`${Symbols.changed} Changed Files: \n- ` + modifiedFiles);
+    message(`${Symbols.changed} Changed Files:\n- ${danger.git.modified_files.join('\n- ')}`);
 }
 
 function checkAssignee() {
