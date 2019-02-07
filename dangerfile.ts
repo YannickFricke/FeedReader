@@ -70,28 +70,19 @@ async function checkReviewers() {
         return;
     }
 
-    const permissionLevel = await danger.github.api.repos.getCollaboratorPermissionLevel({
-        owner: danger.github.thisPR.owner,
-        repo: danger.github.thisPR.repo,
-        username: danger.github.pr.user.login
-    });
-
-    if (
-        permissionLevel.data.permission === 'write' || 
-        permissionLevel.data.permission === 'admin'
-    ) {
-        return;
-    }
-
     const reviewers: string[] = [];
 
-    if (danger.github.requested_reviewers.length > 0) {
-        danger.github.requested_reviewers.forEach((reviewer: GitHubUser) => {
-            reviewers.push(`\n- @${reviewer.login}`);
-        });
-    }
+    danger.github.requested_reviewers.teams.forEach((requestedTeam) => {
+        reviewers.push(`@${danger.github.thisPR.owner}/${requestedTeam}`);
+    });
 
-    reviewers.length === 0 ?
-    warn(`There are no reviewers assigned to this pull request!`) :
-    message(`${Symbols.ok} Assigned reviewers: ${reviewers.join('')}`);
+    danger.github.requested_reviewers.users.forEach((requestedUser) => {
+        reviewers.push(`@${requestedUser}`);
+    });
+
+    if (reviewers.length === 0) {
+        warn(`There are no reviewers assigned to this pull request!`);
+    } else {
+        message(`${Symbols.ok} Assigned reviewers:\n-${reviewers.join('\n -')}`);
+    }
 }
