@@ -12,6 +12,14 @@ const ContentWrapper = styled.div`
     }};
 `;
 
+const NoPostsWrapper = styled(ContentWrapper)`
+    color          : grey;
+    text-align     : center;
+    display        : flex;
+    justify-content: center;
+    flex-direction : column;
+`;
+
 interface IContentProperties {
     posts: IPost[];
 }
@@ -19,13 +27,11 @@ interface IContentProperties {
 export class Content extends React.Component<IContentProperties> {
     public render() {
         if (this.props.posts.length === 0) {
-            return <ContentWrapper style={{
-                color: 'grey',
-                textAlign: 'center',
-                paddingTop: '10vh',
-            }}>
-                We don't have any posts
-            </ContentWrapper>;
+            return <NoPostsWrapper>
+                No posts to display.
+                <br />
+                Start with adding a new feed.
+            </NoPostsWrapper>;
         }
 
         return <ContentWrapper>
