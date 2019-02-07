@@ -2,10 +2,14 @@ import { app, BrowserWindow } from 'electron';
 import installExtension, { REACT_DEVELOPER_TOOLS, REDUX_DEVTOOLS } from 'electron-devtools-installer';
 import { join } from 'path';
 
-declare var __dirname: string;
-
+/**
+ * The electron window
+ */
 let mainWindow: BrowserWindow;
 
+/**
+ * Gets called when the electron window is ready to show
+ */
 function onReady() {
 
     const iconPath = join(__dirname, '..', 'src', 'icons', 'png', '64x64.png');
@@ -24,11 +28,13 @@ function onReady() {
     let urlToLoad = '';
 
     if (!app.isPackaged) {
+        // When the application is not packed we set the url to the webpack-dev-server
         urlToLoad = 'http://localhost:8080';
 
         // Load developer extensions
         installDeveloperTools();
     } else {
+        // Set the url to the packed index.html
         urlToLoad = `file://${__dirname}/index.html`;
     }
 
@@ -41,6 +47,9 @@ function onReady() {
 app.on('ready', () => onReady());
 app.on('window-all-closed', () => app.quit());
 
+/**
+ * Installs the react and redux chrome extension in electron
+ */
 function installDeveloperTools() {
     [REACT_DEVELOPER_TOOLS, REDUX_DEVTOOLS].forEach((element) => {
 		/* tslint:disable */
