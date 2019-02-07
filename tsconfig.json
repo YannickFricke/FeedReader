@@ -24,5 +24,6 @@
         "**/__mocks__/**/*",
         "**/__stories__/**/*",
         "storybook-static",
+        "dangerfile.ts",
     ]
 }

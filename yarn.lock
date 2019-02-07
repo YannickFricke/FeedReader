@@ -1096,10 +1096,10 @@
     universal-user-agent "^2.0.0"
     url-template "^2.0.8"
 
-"@octokit/rest@^16.3.0":
-  version "16.14.1"
-  resolved "https://registry.yarnpkg.com/@octokit/rest/-/rest-16.14.1.tgz#d7c65be7b8c78c889b121619422e7cf5335b1239"
-  integrity sha512-etBdt7br4aSUmgTnaO3pRodzVLhwGQTqUbMrEIdFBGjWlJYfoTa9LieIAtdig6UaDs6InPk0isguPZxU7vCTlQ==
+"@octokit/rest@^16.14.1":
+  version "16.15.0"
+  resolved "https://registry.yarnpkg.com/@octokit/rest/-/rest-16.15.0.tgz#648a88d5de055bcf38976709c5b2bdf1227b926f"
+  integrity sha512-Un+e7rgh38RtPOTe453pT/KPM/p2KZICimBmuZCd2wEo8PacDa4h6RqTPZs+f2DPazTTqdM7QU4LKlUjgiBwWw==
   dependencies:
     "@octokit/request" "2.3.0"
     before-after-hook "^1.2.0"
@@ -4511,13 +4511,13 @@ d@1:
   dependencies:
     es5-ext "^0.10.9"
 
-danger@^7.0.4:
-  version "7.0.4"
-  resolved "https://registry.yarnpkg.com/danger/-/danger-7.0.4.tgz#e7d3aa5fee30babeddb8f32f13a3d61a5b4e38d2"
-  integrity sha512-3sbPZ+yxgvzIUsgKlPSd+EmQ1m4TH8RrKAB+/2reLh8+2LyWBpMgi3AfrM7vs3SeB3JvW6QMjcAtAehOZWswnA==
+danger@^7.0.9:
+  version "7.0.9"
+  resolved "https://registry.yarnpkg.com/danger/-/danger-7.0.9.tgz#057ccf52868feb4416f6379199a813d001f8588e"
+  integrity sha512-HqsztujIEdbBL89Xcr0CF7n/qul5W7LRvER63Dc2dc+MHO3RBtc+4lB2AE1kiOXm5uTgLCA3E2dHdzMvcrYuhg==
   dependencies:
     "@babel/polyfill" "^7.2.5"
-    "@octokit/rest" "^16.3.0"
+    "@octokit/rest" "^16.14.1"
     chalk "^2.3.0"
     commander "^2.18.0"
     debug "^4.1.1"
@@ -4547,7 +4547,6 @@ danger@^7.0.4:
     require-from-string "^2.0.2"
     rfc6902 "^3.0.1"
     supports-hyperlinks "^1.0.1"
-    vm2 "^3.6.3"
 
 dashdash@^1.12.0:
   version "1.14.1"
@@ -14389,11 +14388,6 @@ vm-browserify@0.0.4:
   integrity sha1-XX6kW7755Kb/ZflUOOCofDV9WnM=
   dependencies:
     indexof "0.0.1"
-
-vm2@^3.6.3:
-  version "3.6.10"
-  resolved "https://registry.yarnpkg.com/vm2/-/vm2-3.6.10.tgz#a9066c3849ad8a3ea35b9c0cf79a6589ce6e3cbe"
-  integrity sha512-p4LBl7theIhmKaWPdCn25kEIG0bfDDEDx1lexXH7gcCu9pHIT+PKFgofwLHVHUGhe39lKExeaYVEZtdbQhdl2g==
 
 w3c-hr-time@^1.0.1:
   version "1.0.1"
