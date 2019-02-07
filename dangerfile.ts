@@ -1,4 +1,4 @@
-import { danger, fail, GitHubUser, message, warn } from 'danger';
+import { danger, fail, message, warn } from 'danger';
 
 const Symbols = {
     changed     : ':pencil:',
@@ -11,11 +11,18 @@ checkAssignee();
 checkWIPStatus();
 checkReviewers();
 
+/**
+ * Checks if the given value is null or undefined
+ * @returns True when the value is not null nor undefined
+ */
 function isNullOrUndefined(value) {
     return value === null ||
            value === undefined;
 }
 
+/**
+ * Checks if the current build is a pull request
+ */
 function isPr(): boolean {
     if (isNullOrUndefined(danger.github)) {
         return false;
@@ -28,10 +35,16 @@ function isPr(): boolean {
     return true;
 }
 
+/**
+ * Writes all modified files which were changed
+ */
 function writeModifiedFiles() {
     message(`${Symbols.changed} Changed Files:\n- ${danger.git.modified_files.join('\n- ')}`);
 }
 
+/**
+ * Checks if the pull request has an asignee
+ */
 function checkAssignee() {
     if (!isPr()) {
         return;
@@ -42,6 +55,9 @@ function checkAssignee() {
     }
 }
 
+/**
+ * Checks if the current pull request is "work in progress"
+ */
 function checkWIPStatus() {
     if (!isPr()) {
         return;
@@ -56,6 +72,9 @@ function checkWIPStatus() {
         message(`${Symbols.ok} Pull request is ready to merge!`);
 }
 
+/**
+ * Checks if the current pull request has any reviewers
+ */
 async function checkReviewers() {
     if (!isPr()) {
         return;
