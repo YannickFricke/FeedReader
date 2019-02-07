@@ -61,7 +61,7 @@ async function checkReviewers() {
     if (!isPr()) {
         return;
     }
-    
+
     if (isNullOrUndefined(danger.github.thisPR)) {
         return;
     }
