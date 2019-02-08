@@ -1,6 +1,7 @@
 import * as React from 'react';
 import styled from 'styled-components';
 import Content from './Content';
+import CurrentPost from './CurrentPost';
 
 const HomeWrapper = styled.div`
     display: grid;
@@ -11,7 +12,7 @@ export class Home extends React.Component {
     public render() {
         return <HomeWrapper>
             <Content />
-            <div id="reading">READING!</div>
+            <CurrentPost />
         </HomeWrapper>;
     }
 }
