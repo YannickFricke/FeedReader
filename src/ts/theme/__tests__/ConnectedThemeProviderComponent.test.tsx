@@ -35,6 +35,7 @@ describe('ConnectedThemeProviderComponent', () => {
             app: {
                 darkmode: false,
                 feeds: [],
+                currentPost: undefined,
             },
         };
 

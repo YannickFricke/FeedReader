@@ -7,6 +7,7 @@ import { IAppStoreState } from '../StoreType';
 export const initialState: IAppStoreState = {
     feeds: [],
     darkmode: false,
+    currentPost: undefined,
 };
 
 /**
