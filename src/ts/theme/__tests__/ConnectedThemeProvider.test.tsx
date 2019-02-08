@@ -2,7 +2,7 @@ import { RouterState } from 'connected-react-router';
 import { mount } from 'enzyme';
 import * as React from 'react';
 import { IApplicationState } from '../../store/StoreType';
-import { ConnectedThemeProviderComponent, mapStateToProps } from '../ConnectedThemeProviderComponent';
+import { ConnectedThemeProvider, mapStateToProps } from '../ConnectedThemeProvider';
 import { ITheme } from '../ITheme';
 
 import 'jest-enzyme';
@@ -13,7 +13,7 @@ describe('ConnectedThemeProviderComponent', () => {
             darkmode: false,
         };
 
-        const component = mount(<ConnectedThemeProviderComponent theme={theme} />);
+        const component = mount(<ConnectedThemeProvider theme={theme} />);
 
         expect(component).toBeTruthy();
     });
@@ -23,9 +23,9 @@ describe('ConnectedThemeProviderComponent', () => {
             darkmode: false,
         };
 
-        const component = mount(<ConnectedThemeProviderComponent theme={theme}>
+        const component = mount(<ConnectedThemeProvider theme={theme}>
             <div id="test" />
-        </ConnectedThemeProviderComponent>);
+        </ConnectedThemeProvider>);
         expect(component.contains(<div id="test" />)).toBeTruthy();
     });
 

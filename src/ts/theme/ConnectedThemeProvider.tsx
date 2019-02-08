@@ -4,7 +4,7 @@ import { ThemeProvider } from 'styled-components';
 import { IApplicationState } from '../store/StoreType';
 import { ITheme } from './ITheme';
 
-export interface IConnectedThemeProviderComponentProps {
+export interface IConnectedThemeProviderProps {
     theme?: ITheme;
 }
 
@@ -14,7 +14,7 @@ export interface IConnectedThemeProviderComponentProps {
  * @author Yannick Fricke <yannickfricke@googlemail.com>
  * @license MIT
  */
-export class ConnectedThemeProviderComponent extends React.Component<IConnectedThemeProviderComponentProps> {
+export class ConnectedThemeProvider extends React.Component<IConnectedThemeProviderProps> {
     public render() {
         return <ThemeProvider theme={this.props.theme}>
             <React.Fragment>
@@ -31,7 +31,7 @@ export class ConnectedThemeProviderComponent extends React.Component<IConnectedT
  * @author Yannick Fricke <yannickfricke@googlemail.com>
  * @license MIT
  */
-export const mapStateToProps = (state: IApplicationState): IConnectedThemeProviderComponentProps => {
+export const mapStateToProps = (state: IApplicationState): IConnectedThemeProviderProps => {
     return {
         theme: {
             darkmode: state.app.darkmode,
@@ -44,4 +44,4 @@ export const mapStateToProps = (state: IApplicationState): IConnectedThemeProvid
  * @author Yannick Fricke <yannickfricke@googlemail.com>
  * @license MIT
  */
-export default connect(mapStateToProps)(ConnectedThemeProviderComponent);
+export default connect(mapStateToProps)(ConnectedThemeProvider);

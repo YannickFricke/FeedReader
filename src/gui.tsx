@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as ReactDom from 'react-dom';
 import { createGlobalStyle } from 'styled-components';
-import ConnectedThemeProvider from './ts/theme/ConnectedThemeProviderComponent';
+import ConnectedThemeProvider from './ts/theme/ConnectedThemeProvider';
 
 // Provides the store (state) to all subcomponents
 import { Provider } from 'react-redux';
