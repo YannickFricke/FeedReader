@@ -24,7 +24,7 @@ module.exports = {
 	testEnvironmentOptions      : {
 		'enzymeAdapter': 'react16'
 	},
-	snapshotSerializers   : ['enzyme-to-json'],
+	snapshotSerializers   : ['enzyme-to-json/serializer'],
 	testPathIgnorePatterns: [
 		'__mocks__/',
 	],
