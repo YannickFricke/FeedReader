@@ -25,7 +25,7 @@ export class CurrentPost extends React.Component<ICurrentPostProperties> {
         }
 
         // TODO: Add styling for the selected post
-        return undefined;
+        return <div></div>;
     }
 }
 
