@@ -1,3 +1,4 @@
+import { IFeed } from '../../definitions/IFeed';
 import { IAppAction } from '../actions/AppAction';
 import { IAppStoreState } from '../StoreType';
 
@@ -25,6 +26,14 @@ export function AppReducer(state: IAppStoreState|undefined, action: IAppAction):
             return {
                 ...state,
                 darkmode: !state.darkmode,
+            };
+        case 'ADD_FEED':
+            return {
+                ...state,
+                feeds: [
+                    ...state.feeds,
+                    action.feed as IFeed,
+                ],
             };
     }
 

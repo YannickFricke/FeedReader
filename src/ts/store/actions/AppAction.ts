@@ -1,10 +1,12 @@
 import { Action } from 'redux';
+import { IFeed } from '../../definitions/IFeed';
 
 /**
  * Contains all properties for the actions
  */
 export interface IAppAction extends Action {
     status?: string;
+    feed?: IFeed;
 }
 
 /**
@@ -20,4 +22,11 @@ export const FETCH_FEEDS: IAppAction = {
  */
 export const TOGGLE_DARKMODE: Action = {
     type: 'TOGGLE_DARKMODE',
+};
+
+export const ADD_FEED = (feed: IFeed) => {
+    return {
+        type: 'ADD_FEED',
+        feed,
+    };
 };
