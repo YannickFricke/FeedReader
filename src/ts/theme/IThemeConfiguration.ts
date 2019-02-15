@@ -12,5 +12,5 @@ export interface IThemeConfiguration {
      *
      * @author Yannick Fricke <yannickfricke@googlemail.com>
      */
-    theme: ITheme;
+    theme?: ITheme;
 }
