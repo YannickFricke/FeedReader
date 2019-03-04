@@ -1,5 +1,6 @@
-const commonConfig = require('./webpack.common.config');
-const path = require('path');
+const commonConfig      = require('./webpack.common.config');
+const path              = require('path');
+const htmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = [
     Object.assign({
@@ -14,6 +15,11 @@ module.exports = [
         entry: {
             gui: path.resolve(__dirname, '..', '..', 'gui.tsx'),
         },
-        mode: 'production'
+        mode: 'production',
+        plugins: [
+            new htmlWebpackPlugin({
+                template: path.resolve(__dirname, '..', '..', 'index.html')
+            }),
+        ]
     }, commonConfig)
 ];

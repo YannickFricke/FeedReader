@@ -1,5 +1,4 @@
 const path                              = require('path');
-const htmlWebpackPlugin                 = require('html-webpack-plugin');
 const createStyledComponentsTransformer = require('typescript-plugin-styled-components').default;
 const styledComponentsTransformer       = createStyledComponentsTransformer();
 
@@ -35,10 +34,5 @@ module.exports = {
     },
     node: {
         __dirname: false
-    },
-    plugins: [
-        new htmlWebpackPlugin({
-            template: path.resolve(__dirname, '..', '..', 'index.html')
-        }),
-    ]
+    }
 };
