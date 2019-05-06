@@ -74,7 +74,7 @@
 		"electron-builder": "^20.36.2",
 		"electron-devtools-installer": "^2.2.4",
 		"enzyme": "^3.9.0",
-		"enzyme-adapter-react-16": "^1.7.0",
+		"enzyme-adapter-react-16": "^1.12.1",
 		"enzyme-to-json": "^3.3.4",
 		"file-loader": "^3.0.1",
 		"html-loader": "^0.5.5",
