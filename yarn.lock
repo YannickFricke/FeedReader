@@ -1802,10 +1802,10 @@
     "@types/prop-types" "*"
     csstype "^2.2.0"
 
-"@types/redux-mock-store@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@types/redux-mock-store/-/redux-mock-store-1.0.0.tgz#e06bad2b4ca004bdd371f432c3e48a92c1857ed9"
-  integrity sha512-7+H3+O8VX4Mx2HNdDLP1MSNoWp+FXfq3HDGc08kY5vxyuml7OAudO4CAQFsKsDvbU5spApJMZ6buEi/c3hKjtQ==
+"@types/redux-mock-store@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@types/redux-mock-store/-/redux-mock-store-1.0.1.tgz#90ca701d640aef7c007f564a9a4f8dc03180b0f7"
+  integrity sha512-1egEnh2/+sRRKImnCo5EMVm0Uxu4fBHeLHk/inhSp/VpE93It8lk3gYeNfehUgXd6OzqP5LLA9kzO9x7o3WfwA==
   dependencies:
     redux "^4.0.0"
 
@@ -3947,10 +3947,10 @@ clean-stack@^2.0.0:
   resolved "https://registry.yarnpkg.com/clean-stack/-/clean-stack-2.0.0.tgz#301bfa9e8dd2d3d984c0e542f7aa67b996f63e0a"
   integrity sha512-VEoL9Qh7I8s8iHnV53DaeWSt8NJ0g3khMfK6NiCPB7H657juhro+cSw2O88uo3bo0c0X5usamtXk0/Of0wXa5A==
 
-clean-terminal-webpack-plugin@^2.0.1:
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/clean-terminal-webpack-plugin/-/clean-terminal-webpack-plugin-2.0.1.tgz#86d689ebd599e6e51a5c503027ee45ff14f32d9f"
-  integrity sha512-w/n1vphT/KTQW2bpvqHmsl7eiIZJlodkMKujfiI3R63P8MOkhSDJ4UPbsoqxZukpqd/9WJPvUrs4wZ9nlUPtDQ==
+clean-terminal-webpack-plugin@^2.0.3:
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/clean-terminal-webpack-plugin/-/clean-terminal-webpack-plugin-2.0.3.tgz#308508ec724e49ae74df07f0ac122fdb33c089be"
+  integrity sha512-tq93evnX3gEaRd9/0qRYnNY0qoM4jp/iTXGOt45VpVUGZmQtobOLCWPbSVx+AWYnurBTHpntKSF6Q5nDd3jPXw==
 
 cli-boxes@^1.0.0:
   version "1.0.0"
