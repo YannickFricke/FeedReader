@@ -32,7 +32,7 @@
 	},
 	"dependencies": {
 		"classnames": "^2.2.6",
-		"clean-terminal-webpack-plugin": "^2.0.1",
+		"clean-terminal-webpack-plugin": "^2.0.3",
 		"connected-react-router": "^6.2.2",
 		"history": "^4.7.2",
 		"moment": "^2.22.2",
